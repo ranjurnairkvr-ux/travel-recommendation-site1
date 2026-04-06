@@ -4,44 +4,33 @@
     <title>Travel Recommendation</title>
 </head>
 <body>
-
+<div id="result"></div>
 <h1>Welcome to Travel Recommendation Website</h1>
     <h2>Search Travel Destination</h2><input type="text" id="searchBox" placeholder="Search destination">
-<button onclick="searchPlace()">Search</button><div id="result"></div><script>
-function searchPlace() {
-    let input = document.getElementById("searchBox").value.toLowerCase();
+<button onclick="searchPlace()">Search</button><div id="result"></div>
+    <script>
+function searchFunction() {
+    let input = document.getElementById("search").value.toLowerCase();
     let result = document.getElementById("result");
 
     if (input.includes("beach")) {
         result.innerHTML = `
-        <h3>Goa Beach</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Goa_beach.jpg" width="300">
-        <h3>Kovalam Beach</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Kovalam_beach.jpg" width="300">
-        `;
-    }
+            <h2>Beach Recommendations</h2>
 
-    else if (input.includes("temple")) {
-        result.innerHTML = `
-        <h3>Meenakshi Temple</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Meenakshi_Amman_Temple.jpg" width="300">
-        <h3>Golden Temple</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Golden_Temple_Amritsar.jpg" width="300">
-        `;
-    }
+            <h3>Maldives Beach</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Maldives_beach.jpg" width="300">
 
-    else if (input.includes("country")) {
-        result.innerHTML = `
-        <h3>India</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_Gate.jpg" width="300">
-        <h3>France</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Eiffel_Tower.jpg" width="300">
+            <h3>Bora Bora Beach</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Bora_Bora_beach.jpg" width="300">
         `;
+    } else {
+        result.innerHTML = "<p>No results found</p>";
     }
+}
 
-    else {
-        result.innerHTML = "No results found";
-    }
+function clearFunction() {
+    document.getElementById("search").value = "";
+    document.getElementById("result").innerHTML = "";
 }
 </script>
 
