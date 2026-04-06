@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Travel Recommendation</title>
+    <title>Travel Recommendation Website</title>
 </head>
+
 <body>
-<div id="result"></div>
-<h1>Welcome to Travel Recommendation Website</h1>
-    <h2>Search Travel Destination</h2><input type="text" id="searchBox" placeholder="Search destination">
-<button onclick="searchPlace()">Search</button><div id="result"></div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+
+        <input type="text" id="search" placeholder="Search destination">
+
+        <button onclick="searchFunction()">Search</button>
+        <button onclick="clearFunction()">Clear</button>
+    </nav>
+
+    <h1>Welcome to Travel Recommendation Website</h1>
+
+    <!-- Result Area -->
+    <div id="result"></div>
+
+    <!-- Script -->
     <script>
-else if (input.includes("country")) {
-    result.innerHTML = `
-        <h2>Country Recommendations</h2>
+        function searchFunction() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let result = document.getElementById("result");
 
-        <h3>Japan</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Mount_Fuji_Japan.jpg" width="300">
+            // BEACH
+            if (input.includes("beach")) {
+                result.innerHTML = `
+                    <h2>Beach Recommendations</h2>
 
-        <h3>France</h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Paris_Night.jpg" width="300">
-    `;
-}
-</script>
+                    <h3>Maldives Beach</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Maldives_beach.jpg" width="300">
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
-    <input type="text" id="search" placeholder="Search destination">
+                    <h3>Bali Beach</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Bali_beach.jpg" width="300">
+                `;
+            }
 
-    <button onclick="searchFunction()">Search</button>
-    <button onclick="clearFunction()">Clear</button>
-</nav>
+            // TEMPLE
+            else if (input.includes("temple")) {
+                result.innerHTML = `
+                    <h2>Temple Recommendations</h2>
 
-<p>This website helps you find travel destinations.</p>
+                    <h3>Meenakshi Temple</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Meenakshi_Temple.jpg" width="300">
+
+                    <h3>Golden Temple</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Golden_Temple_Amritsar.jpg" width="300">
+                `;
+            }
+
+            // COUNTRY
+            else if (input.includes("country")) {
+                result.innerHTML = `
+                    <h2>Country Recommendations</h2>
+
+                    <h3>Japan</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Mount_Fuji_Japan.jpg" width="300">
+
+                    <h3>France</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Paris_Night.jpg" width="300">
+                `;
+            }
+
+            // NO RESULT
+            else {
+                result.innerHTML = "<p>No results found</p>";
+            }
+        }
+
+        function clearFunction() {
+            document.getElementById("search").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
 
 </body>
 </html>
