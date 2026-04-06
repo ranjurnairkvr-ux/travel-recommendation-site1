@@ -734,8 +734,24 @@ function searchPlace() {
         result.innerHTML = "No results found";
     }
 }
-</script>
+<h2>Search Travel Destination</h2><input type="text" id="searchBox" placeholder="Search destination">
+<button onclick="searchPlace()">Search</button><div id="result"></div><script>
+function searchPlace() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let result = document.getElementById("result");
 
+    if (input.includes("temple")) {
+        result.innerHTML = `
+        <h3>Meenakshi Temple</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Meenakshi_Amman_Temple.jpg" width="300">
+        <h3>Golden Temple</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Golden_Temple_Amritsar.jpg" width="300">
+        `;
+    } else {
+        result.innerHTML = "No results found";
+    }
+}
+</script>
 
 
     😊😊
