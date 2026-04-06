@@ -9,28 +9,16 @@
     <h2>Search Travel Destination</h2><input type="text" id="searchBox" placeholder="Search destination">
 <button onclick="searchPlace()">Search</button><div id="result"></div>
     <script>
-function searchFunction() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let result = document.getElementById("result");
+else if (input.includes("temple")) {
+    result.innerHTML = `
+        <h2>Temple Recommendations</h2>
 
-    if (input.includes("beach")) {
-        result.innerHTML = `
-            <h2>Beach Recommendations</h2>
+        <h3>Meenakshi Temple</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Meenakshi_Temple.jpg" width="300">
 
-            <h3>Maldives Beach</h3>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Maldives_beach.jpg" width="300">
-
-            <h3>Bora Bora Beach</h3>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Bora_Bora_beach.jpg" width="300">
-        `;
-    } else {
-        result.innerHTML = "<p>No results found</p>";
-    }
-}
-
-function clearFunction() {
-    document.getElementById("search").value = "";
-    document.getElementById("result").innerHTML = "";
+        <h3>Golden Temple</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Golden_Temple_Amritsar.jpg" width="300">
+    `;
 }
 </script>
 
